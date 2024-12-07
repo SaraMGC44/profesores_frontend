@@ -1,38 +1,167 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Estilo general */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+  position: relative; /* Necesario para que el contenedor absoluto se posicione correctamente */
+}
+
+/* Estilos del contenedor principal */
+.container {
+  background-color: #ffffff;
+  width: 80%; /* 80% del ancho de la ventana */
+  max-width: 700px; /* Ancho máximo de 600px */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: absolute; /* Fijar el contenedor en el centro de la pantalla */
+  top: 50%; /* 50% desde la parte superior */
+  left: 50%; /* 50% desde la izquierda */
+  transform: translate(-50%, -50%); /* Mover el contenedor hacia atrás por su mitad para centrarlo completamente */
+}
+
+/* Otros estilos */
+h1 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.5em;
+}
+
+h2 {
+  color: #5f6368;
+  font-size: 1.5em;
+  margin-top: 0;
+  border-bottom: 2px solid #e2e2e2;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+input[type="number"],
+input[type="datetime-local"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
+input[type="number"]:focus,
+input[type="datetime-local"]:focus {
+  outline: none;
+  border-color: #6200ea;
+  box-shadow: 0 0 4px rgba(98, 0, 234, 0.4);
+}
+
+/* Estilo de los botones */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #6200ea;
   color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #5a00d4;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:active {
+  background-color: #4a00b2;
+}
+
+/* Taabla de profesores y entradas */
+/* Estilos generales para la tabla */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 1em;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de los encabezados */
+.styled-table thead tr {
+  background-color: #4d94ff; /* Azul más claro */
+  color: white;
+  text-align: left;
+  padding: 12px;
+}
+
+/* Estilo de las filas */
+.styled-table tbody tr {
+  background-color: #f9f9f9;
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Efecto hover sobre las filas */
+.styled-table tbody tr:hover {
+  background-color: #e0f0ff; /* Azul más claro cuando se pasa el mouse */
+}
+
+/* Estilo de las celdas */
+.styled-table th, .styled-table td {
+  padding: 12px 15px;
+}
+
+/* Borde de la tabla */
+.styled-table td, .styled-table th {
+  border: 1px solid #ddd;
+}
+
+/* Sombra y redondeo */
+.styled-table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Estilo de la fila seleccionada (si es necesario) */
+.styled-table tbody tr.selected {
+  background-color: #d1e2ff; /* Azul suave para la fila seleccionada */
+}
+
+
+
+/* Estructura de cada sección */
+.section {
+  margin-bottom: 250px;
+    
+}
+
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #4d94ff; /* Color de fondo verde */
+  color: white; /* Color de texto blanco */
+  border-radius: 5px;
+  margin-bottom: 10px; /* Separación entre botones cuando están en una columna */
+}
+
+button:hover {
+  background-color: #45a049; /* Efecto hover para el botón */
+}
+
+/* Contenedor para los botones, usando flexbox para alinear horizontalmente */
+.button-container {
+  display: flex;
+  justify-content: center; /* Alinear los botones al centro */
+  gap: 10px; /* Espacio entre los botones */
 }
